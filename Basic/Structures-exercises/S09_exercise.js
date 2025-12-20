@@ -21,7 +21,7 @@ let months = new Map([
 ]);
 
 // Array que contiene los meses de verano
-let summerMonths = ["Dciembre", "Enero", "Febrero"];
+let summerMonths = ["Diciembre", "Enero", "Febrero"];
 
 // Añadir al Map una clave especial "Verano" que almacene el array
 months.set("Verano", summerMonths);
