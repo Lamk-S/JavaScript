@@ -161,3 +161,93 @@ console.log(person6.name)
 
 // Modificación mediante setter
 person6.bank = "new LAMK123456789"
+
+// ==================================================
+// Herencia
+// ==================================================
+
+/*
+La herencia permite crear nuevas clases a partir
+de otras clases existentes.
+*/
+
+// --------------------------------------------------
+// Clase base (clase padre)
+// --------------------------------------------------
+
+class Animal {
+    constructor (name) {
+        this.name = name
+    }
+
+    sound() {
+        console.log("El animal emite un sonido genérico.")
+    }
+}
+
+// --------------------------------------------------
+// Clase hija Dog
+// --------------------------------------------------
+
+class Dog extends Animal {
+
+    // Sobrescritura de método
+    sound() {
+        console.log("Guau!")
+    }
+    run() {
+        console.log("El perro corre")
+    }
+}
+
+// --------------------------------------------------
+// Clase hija Fish
+// --------------------------------------------------
+
+class Fish extends Animal {
+
+    constructor (name, size) {
+        // super() llama al constructor de la clase padre
+        super(name)
+        this.size = size
+    }
+    swim() {
+        console.log("EL pez nada")
+    }
+}
+
+// --------------------------------------------------
+// Creación de instancias
+// --------------------------------------------------
+
+let myDog = new Dog("Wolf")
+myDog.run()
+myDog.sound()
+
+let myFish = new Fish("Nemo", 10)
+myFish.swim()
+myFish.sound()
+
+// ==================================================
+// Métodos estáticos
+// ==================================================
+
+/*
+Los métodos estáticos pertenecen a la clase,
+NO a las instancias.
+
+Se accede a ellos directamente desde la clase.
+*/
+
+class MathOperations {
+    static sum(a, b) {
+        return a + b
+    }
+}
+
+// Llamada a un método estático
+console.log(MathOperations.sum(5, 10))
+
+// Esto NO funcionaría
+// let math = new MathOperations()
+// math.sum(5, 10)
